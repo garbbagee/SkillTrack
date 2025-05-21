@@ -1,0 +1,7 @@
+{
+  "name": "SkillTrack",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
