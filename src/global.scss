@@ -35,3 +35,20 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+/* Estilos para modo claro */
+/* Modo claro */
+body {
+  background-color: #f0f0f0;
+  color: #222222; /* texto oscuro */
+}
+
+/* Modo oscuro */
+body.dark {
+  background-color: #121212;
+  color: #eeeeee; /* texto claro */
+}
+
+/* Para que los textos dentro de ion-content también cambien */
+ion-content {
+  color: inherit;
+}

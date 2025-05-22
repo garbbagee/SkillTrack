@@ -1,0 +1,94 @@
+.login-page {
+  --background: var(--ion-color-step-50);
+}
+
+.login-page .logo {
+  display: block;
+  margin: 40px auto 20px;
+  max-width: 150px;
+}
+
+.login-page .container {
+  padding: 20px;
+  color: #00adb5; /* azul chillón siempre */
+}
+
+.login-page .title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #00adb5; /* azul chillón siempre */
+  transition: color 0.3s ease;
+}
+
+.login-page .input-item {
+  --highlight-color-focused: #00adb5;
+  --border-color: #393e46;
+  color: #00adb5; /* texto azul chillón */
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Placeholder azul chillón semi-transparente */
+.login-page ion-input {
+  --color: #00adb5; /* texto azul chillón */
+  --placeholder-color: #00adb5cc; /* placeholder azul chillón con transparencia */
+}
+
+.login-page .error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin: 5px 10px 15px;
+}
+
+.login-page .submit-btn {
+  margin-top: 20px;
+  --background: #00adb5;
+  --border-radius: 12px;
+  font-weight: bold;
+}
+
+/* === MODO OSCURO === */
+body.dark .login-page {
+  --background: var(--ion-color-dark);
+}
+
+body.dark .login-page .container {
+  background: var(--ion-color-step-150);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+  color: #00adb5; /* azul chillón */
+}
+
+body.dark .login-page .title {
+  color: #00adb5; /* azul chillón */
+}
+
+body.dark .login-page .input-item {
+  --border-color: rgba(255, 255, 255, 0.3);
+  color: #00adb5; /* texto azul chillón */
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.05);
+}
+
+body.dark .login-page ion-input {
+  --color: #00adb5; /* texto azul chillón */
+  --placeholder-color: #00adb5cc; /* placeholder azul chillón semi-transparente */
+}
+
+body.dark .login-page .input-item.ion-focused,
+body.dark .login-page .input-item:hover {
+  --border-color: var(--ion-color-primary);
+  box-shadow: 0 0 8px var(--ion-color-primary);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark .login-page .error-message {
+  color: var(--ion-color-danger);
+}
+
+body.dark .login-page .submit-btn {
+  --background: var(--ion-color-primary);
+}

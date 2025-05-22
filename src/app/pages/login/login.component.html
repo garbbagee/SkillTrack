@@ -1,0 +1,49 @@
+<ion-content fullscreen class="login-page">
+  <img [src]="isDark ? 'assets/logo/white.png' : 'assets/logo/dark.png'" alt="SkillTrack Logo" class="logo" />
+
+  <div class="container">
+    <h1 class="title" [ngClass]="{ 'dark-title': isDark, 'light-title': !isDark }">
+      {{ isDark ? 'Bienvenido de nuevo 🌙' : 'Welcome Back ☀️' }}
+    </h1>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate>
+      <ion-item
+        lines="full"
+        class="input-item"
+        [class.ion-focused]="email.touched && email.invalid"
+      >
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div *ngIf="email.touched && email.invalid" class="error-message">
+        <div *ngIf="email.errors?.['required']">Email is required</div>
+        <div *ngIf="email.errors?.['email']">Enter a valid email</div>
+      </div>
+
+      <ion-item
+        lines="full"
+        class="input-item"
+        [class.ion-focused]="password.touched && password.invalid"
+      >
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div *ngIf="password.touched && password.invalid" class="error-message">
+        <div *ngIf="password.errors?.['required']">Password is required</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Password must be at least 6 characters
+        </div>
+      </div>
+
+      <ion-button expand="block" fill="outline" (click)="toggleTheme()" type="button">
+        <ion-icon [name]="isDark ? 'sunny' : 'moon'" slot="start"></ion-icon>
+        {{ isDark ? 'Modo Claro' : 'Modo Oscuro' }}
+      </ion-button>
+
+      <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" class="submit-btn">
+        Login
+      </ion-button>
+    </form>
+  </div>
+</ion-content>
